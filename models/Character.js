@@ -1,4 +1,4 @@
-//import model, satatypes
+//import model, datatypes
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

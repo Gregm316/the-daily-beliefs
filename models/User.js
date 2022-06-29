@@ -1,4 +1,4 @@
-//import model, satatypes
+//import model, datatypes
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -34,7 +34,7 @@ User.init(
                 len: [8,20]
             }
         }
-        //ad favorite_character_id? A user picks their favorite character
+        //add favorite_character_id? A user picks their favorite Marvel character
     },
     {
         sequelize,
