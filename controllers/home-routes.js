@@ -8,7 +8,7 @@ const withAuth = require("../utils/auth");
 //lay out the routes here - should have "/" and "/login"
 
 //main "/" route
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
     //do we need to display any info fromt he tables (for logged in user)? I think we just want blank homepage
     //if we wanted to display, this is where we would do something like a Post.findAll(...)
     try {

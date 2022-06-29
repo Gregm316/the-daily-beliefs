@@ -1,11 +1,12 @@
 //imports - router, and any model necessary
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //Endpoint: "/api/users"
 
 //get / display all users - endpoint: "/api/users/"
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
     // try catch, use findAll for User
     try{ 
         const userData = await User.findAll ({
@@ -19,7 +20,7 @@ router.get("/", async (req, res) => {
 
 
 //get / display a certain user
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ["password"]},
