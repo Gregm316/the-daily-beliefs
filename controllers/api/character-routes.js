@@ -25,10 +25,28 @@ router.get("/:id", withAuth, async (req, res) => {
                 character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
             }
         })
+        res.status(200).json(characterData);
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+
+//include a post route the does creates a new post? instead of in post-routes?
+router.post("/:id", withAuth, async (req, res) => {
+    try {
+        //POST route - create a new post with the character_id of whatever re.params.id is
+        const newPost = await Post.create({
+            message: req.body.message,
+            character_id: req.params.id,
+            user_id: req.body.user
+        })
+        //create array of all current posts (for that ID, then push the newPost to it)
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 //post route - only be used if we allow the end user to creat a new character page for a marvel character that we did not hard code
 
