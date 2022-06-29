@@ -12,6 +12,10 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
+        message: {
+            type:DataTypes.STRING,
+            allowNull: false
+        },
         //foreign key the stores a reference for the Character that the Post is about
         character_id: {
             type: DataTypes.INTEGER,
