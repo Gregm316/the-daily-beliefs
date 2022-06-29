@@ -6,7 +6,16 @@ const withAuth = require("../../utils/auth");
 //Endpoint = "/api/characters"
 
 //get / display ALL character (use findAll)
-router.get("/", withAuth, )
+router.get("/", withAuth, async (res, res) => {
+    try {
+        const characterData = await Character.findAll({
+            attributes: [character_name]
+        });
+        res.status(200).json(characterData); //displays all characterData
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 //get route - display a certain character by id# (use findbyPk) (we would essentially use Post.findAll where character_id=character.id)
 
