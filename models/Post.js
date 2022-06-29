@@ -1,5 +1,4 @@
 //import model, datatypes
-const { builtinModules } = require("module");
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

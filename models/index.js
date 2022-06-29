@@ -21,7 +21,6 @@ Character.hasMany(Post, {
 // });
 
 //A Post belongsTo a Character...and a User?
-
 Post.belongsTo(User, {
     foreignKey: "user_id"
 });
