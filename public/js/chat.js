@@ -1,3 +1,5 @@
+// Will need to update and test when we get further along
+
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
