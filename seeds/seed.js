@@ -15,12 +15,12 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    await Post.bulkCreate(postData, {
+    await Character.bulkCreate(characterData, {
         individualHooks: true,
         returning: true,
     });
 
-    await Character.bulkCreate(characterData, {
+    await Post.bulkCreate(postData, {
         individualHooks: true,
         returning: true,
     });
