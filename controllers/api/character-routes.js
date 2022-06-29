@@ -11,7 +11,7 @@ router.get("/", withAuth, async (req, res) => {
         const characterData = await Character.findAll({
             attributes: [character_name]
         });
-        res.status(200).json(characterData); //displays all characterData
+        res.status(200).json(characterData); //displays all characterData - do we need to switch this to a res.render instead??
     } catch (err) {
         res.status(500).json(err);
     }
@@ -24,8 +24,8 @@ router.get("/:id", withAuth, async (req, res) => {
             where: {
                 character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
             }
-        })
-        res.status(200).json(characterData);
+        });
+        res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
         res.status(500).json(err);
     }
@@ -40,9 +40,17 @@ router.post("/:id", withAuth, async (req, res) => {
             message: req.body.message,
             character_id: req.params.id,
             user_id: req.body.user
-        })
+        });
+        //re-run query that finds all posts with the certain ID
+        const characterData = await Post.findAll({ // find all items in the Post table but...
+            where: {
+                character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
+            }
+        });
         //create array of all current posts (for that ID, then push the newPost to it)
-
+        const posts = characterData.map((post) => post.get({ plain: true }));
+        // characterData.push(newPost); // think this line is uncessary because it is async - when characterData is created here, it shoudl include the newPost just added to the table above
+        res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
         res.status(500).json(err);
     }
