@@ -34,3 +34,6 @@ router.get("/:id", async (req, res) => {
 
 
 //delete a certain user
+
+//export router
+module.exports = router;
