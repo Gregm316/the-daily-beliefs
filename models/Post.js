@@ -32,7 +32,7 @@ Post.init(
     },
     {
         sequelize,
-        timestamps: true, //do we want to set this to true?
+        timestamps: true, //set this to true to log timsestamp of each post
         freezeTableName: true,
         underscored: true,
         modelName: 'post',

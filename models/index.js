@@ -22,8 +22,17 @@ Character.hasMany(Post, {
 
 //A Post belongsTo a Character...and a User?
 
+Post.belongsTo(User, {
+    foreignKey: "user_id"
+});
+
+Post.belongsTo(Character, {
+    foreignKey: "character_id"
+});
 
 
+//export all models
+module.exports = { User, Character, Post};
 
 
 
