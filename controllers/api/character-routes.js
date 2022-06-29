@@ -1,6 +1,6 @@
 //imports - router, and any model necessary
 const router = require("express").Router();
-const { Character } = require("../../models");
+const { Character, Post } = require("../../models");
 
 //Endpoint = "/api/characters"
 

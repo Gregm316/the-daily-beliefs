@@ -25,6 +25,13 @@ router.get("/:id", async (req, res) => {
             attributes: { exclude: ["password"]},
             order: [['name', 'ASC']],
         })
+        //if no user with that ID, send error message
+        if (!userData) {
+            res.status(404).json({ message: "No user with that ID"});
+            return;
+        }
+        res.status(200).json(userData);
+
     } catch (err) {
         res.status(500).json(err);
     }
