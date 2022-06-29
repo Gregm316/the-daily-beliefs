@@ -34,6 +34,7 @@ User.init(
                 len: [8,20]
             }
         }
+        //ad favorite_character_id? A user picks their favorite character
     },
     {
         sequelize,
