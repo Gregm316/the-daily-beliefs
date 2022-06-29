@@ -29,15 +29,5 @@ Post.belongsTo(Character, {
     foreignKey: "character_id"
 });
 
-
-//export all models
-module.exports = { User, Character, Post};
-
-
-
-
-
-
-
 //export all the models
 module.exports = { User, Character, Post }
