@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
             attributes: { exclude: ["password"]},
             order: [['name', 'ASC']],
         });
-        res.status(200).json(userData);
+        res.status(200).json(userData); //do we need to switch this to a res.render instead??
     } catch (err) {
         res.status(500).json(err);
     }
