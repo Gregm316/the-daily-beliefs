@@ -46,6 +46,7 @@ router.post("/", async (req, res) => {
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
+            username: req.body.username,
             password: req.body.password
         });
         res.status(200).json(userData);
