@@ -25,6 +25,9 @@ router.get("/:id", withAuth, async (req, res) => {
                 character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
             }
         });
+        if (!characterData) {
+            res.status(404).json({ message: "No character by that ID number"});
+        }
         res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
         res.status(500).json(err);
