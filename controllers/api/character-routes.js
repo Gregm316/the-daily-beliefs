@@ -51,7 +51,7 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 //include a post route the does creates a new post? instead of in post-routes?
-router.post("/:id",  async (req, res) => {
+router.post("/:id", withAuth, async (req, res) => {
     try {
         //POST route - create a new post with the character_id of whatever re.params.id is
         const newPost = await Post.create({
