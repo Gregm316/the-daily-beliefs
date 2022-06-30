@@ -36,7 +36,7 @@ router.get("/", withAuth, async (req, res) => {
 
 
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
-router.get("/:id",  async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
     try {
         const characterData = await Character.findByPk(req.params.id, { // find the single character by the given id...
             include: [{ model: Post}] //join the Post table
@@ -51,23 +51,23 @@ router.get("/:id",  async (req, res) => {
 });
 
 //include a post route the does creates a new post? instead of in post-routes?
-router.post("/:id", withAuth, async (req, res) => {
+router.post("/:id",  async (req, res) => {
     try {
         //POST route - create a new post with the character_id of whatever re.params.id is
         const newPost = await Post.create({
             message: req.body.message,
             character_id: req.params.id,
-            user_id: req.body.user
+            user_id: req.body.user_id
         });
         //re-run query that finds all posts with the certain ID
         const characterData = await Character.findByPk(req.params.id, { // find the single character by the given id...
-            include: [{ model: Post}] //join the Post table
+            include: [{ model: Post }] //join the Post table
         });
         if (!characterData) {
             res.status(404).json({ message: "No character by that ID number"});
         }
         //create array of all current posts (for that ID), then push the newPost to it
-        const posts = characterData.map((post) => post.get({ plain: true }));
+        // const posts = characterData.map((post) => post.get({ plain: true })); //recently commented this out since we change the function
         // characterData.push(newPost); // think this line is uncessary because it is async - when characterData is created here, it shoudl include the newPost just added to the table above
         res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
