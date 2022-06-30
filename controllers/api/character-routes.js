@@ -18,12 +18,28 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 //get route - display a certain character by id# (use findbyPk) (we would essentially use Post.findAll where character_id=character.id)
-router.get("/:id", withAuth, async (req, res) => {
+// router.get("/:id", withAuth, async (req, res) => {
+//     try {
+//         const characterData = await Post.findAll({ // find all items in the Post table but...
+//             where: {
+//                 character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
+//             }
+//         });
+//         if (!characterData) {
+//             res.status(404).json({ message: "No character by that ID number"});
+//         }
+//         res.status(200).json(characterData); //do we need to switch this to a res.render instead??
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+
+//duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
+router.get("/:id",  async (req, res) => {
     try {
-        const characterData = await Post.findAll({ // find all items in the Post table but...
-            where: {
-                character_id: req.params.id // ...only return Posts where the id in the url matches the character_id column in the Post table
-            }
+        const characterData = await Character.findByPk(req.params.id, { // find the single character by the given id...
+            include: [{ model: Post}] //join the Post table
         });
         if (!characterData) {
             res.status(404).json({ message: "No character by that ID number"});
@@ -33,7 +49,6 @@ router.get("/:id", withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 //include a post route the does creates a new post? instead of in post-routes?
 router.post("/:id", withAuth, async (req, res) => {
