@@ -1,0 +1,19 @@
+.bg-image {
+    background-image: url('./images/header2.png');
+    height: 240px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* May need to switch to body later */
+html {
+    background-color: #fff2e2;
+}
+
+.container {
+    background-color: white;
+}
+.section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
