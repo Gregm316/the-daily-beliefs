@@ -2,6 +2,11 @@
 const router = require("express").Router();
 const { Character, Post } = require("../../models");
 const withAuth = require("../../utils/auth");
+require('dotenv').config();
+
+const imgElement = document.querySelector("#img-placeholder"); //added this if we want to update the character's thumbnail image into the character page being displayed
+const bioElement = document.querySelector("#bio-placeholder"); //added this for same reason, update bio via API
+const apiUrl = "https://gateway.marvel.com/v1/public/characters?name=hulk&ts=test&apikey="+ process.env.API_KEY+"&hash=c3ab47d4e62a9d8621a7777293aa85ee"
 
 //Endpoint = "/api/characters"
 
@@ -38,6 +43,19 @@ router.get("/", withAuth, async (req, res) => {
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
 router.get("/:id", withAuth, async (req, res) => {
     try {
+        //try to fetch the given character's URL (maybe as an external function)....
+        fetch(apiUrl)
+        .then(function(res){
+            return res.json();
+          })
+          .then(function(data) {
+            let thumbnailImg = data.data.results.thumbnail + ".jpg";
+            let bio = data.data.results.description ;
+          })
+        //then save the Bio and Thumbnail as variables...
+        //Then use .innerhtml to render that content correct place in our webpage...
+
+        //then continue to grab the rest of the process of querying data from our DB
         const characterData = await Character.findByPk(req.params.id, { // find the single character by the given id...
             include: [{ model: Post}] //join the Post table
         });
