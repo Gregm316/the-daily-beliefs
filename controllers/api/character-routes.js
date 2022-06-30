@@ -9,7 +9,7 @@ const withAuth = require("../../utils/auth");
 router.get("/", withAuth, async (req, res) => {
     try {
         const characterData = await Character.findAll({
-            attributes: [character_name]
+            attributes: ["character_name"]
         });
         res.status(200).json(characterData); //displays all characterData - do we need to switch this to a res.render instead??
     } catch (err) {
@@ -58,6 +58,7 @@ router.post("/:id", withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 })
+
 
 //post route - only be used if we allow the end user to creat a new character page for a marvel character that we did not hard code
 

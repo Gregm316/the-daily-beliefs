@@ -11,7 +11,7 @@ router.get("/", withAuth, async (req, res) => {
     try{ 
         const userData = await User.findAll ({
             attributes: { exclude: ["password"]},
-            order: [['name', 'ASC']],
+            order: [['last_name', 'ASC']],
         });
         res.status(200).json(userData); //do we need to switch this to a res.render instead??
     } catch (err) {
@@ -25,7 +25,7 @@ router.get("/:id", withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ["password"]},
-            order: [['name', 'ASC']],
+            order: [['last_name', 'ASC']],
         })
         //if no user with that ID, send error message
         if (!userData) {
