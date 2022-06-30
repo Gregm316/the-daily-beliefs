@@ -1,8 +1,14 @@
-//import model, datatypes
+//import model, datatypes & bcrypt to encrypt user pw
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+//import bcrypt for password
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      };
+}
 
 User.init(
     {
@@ -37,6 +43,12 @@ User.init(
         //add favorite_character_id? A user picks their favorite Marvel character
     },
     {
+        hooks: {
+            beforeCreate: async (newUserData) => {
+              newUserData.password = await bcrypt.hash(newUserData.password, 10);
+              return newUserData;
+            },
+          },
         sequelize,
         timestamps: false,
         freezeTableName: true,
