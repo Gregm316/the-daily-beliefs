@@ -3,6 +3,7 @@ const router = require("express").Router();
 const { Character, Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 require('dotenv').config(); //import dotenv so we can hide API key
+//require the marvelFetch() function if we go that route
 
 const imgElement = document.querySelector("#img-placeholder"); //added this if we want to update the character's thumbnail image into the character page being displayed
 const bioElement = document.querySelector("#bio-placeholder"); //added this for same reason, update bio via API
@@ -12,6 +13,7 @@ const apiUrl = "https://gateway.marvel.com/v1/public/characters?name=hulk&ts=tes
 
 //get / display ALL character (use findAll)
 router.get("/", withAuth, async (req, res) => {
+    console.log("GET request on /api/characters/");
     try {
         const characterData = await Character.findAll({
             attributes: ["character_name"]
@@ -43,6 +45,7 @@ router.get("/", withAuth, async (req, res) => {
 
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
 router.get("/:id", withAuth, async (req, res) => {
+    console.log("GET request on /api/characters/:id");
     try {
         //try to fetch the given character's URL (maybe as an external function)....
         fetch(apiUrl)
@@ -74,6 +77,7 @@ router.get("/:id", withAuth, async (req, res) => {
 
 //include a post route the does creates a new post? instead of in post-routes?
 router.post("/:id", withAuth, async (req, res) => {
+    console.log("POST request on route /api/characters/:id");
     try {
         //POST route - create a new post with the character_id of whatever re.params.id is
         const newPost = await Post.create({

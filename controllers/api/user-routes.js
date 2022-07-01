@@ -7,6 +7,7 @@ const withAuth = require("../../utils/auth");
 
 //get / display all users - endpoint: "/api/users/"
 router.get("/", withAuth, async (req, res) => {
+    console.log("GET request on /api/users");
     // try catch, use findAll for User
     try{ 
         const userData = await User.findAll ({
@@ -23,6 +24,7 @@ router.get("/", withAuth, async (req, res) => {
 
 //get / display a certain user
 router.get("/:id", withAuth, async (req, res) => {
+    console.log("GET request on /api/users/:id");
     try {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ["password"]},
@@ -43,6 +45,7 @@ router.get("/:id", withAuth, async (req, res) => {
 
 //create (POST) a new user
 router.post("/", async (req, res) => {
+    console.log("POST request on /api/users");
     try {
         const userData = await User.create({
             first_name: req.body.first_name,

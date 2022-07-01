@@ -25,3 +25,6 @@ function marvelFetch () {
 
 //call function (since it is linked in character.handlebars, it should only be called upon each page loading on api/characters/)
 marvelFetch();
+
+//export the function marvelFetch once we use this file?
+module.exports = marvelFetch();
