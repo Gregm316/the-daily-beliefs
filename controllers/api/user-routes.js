@@ -15,6 +15,7 @@ router.get("/", withAuth, async (req, res) => {
         });
         res.status(200).json(userData); //do we need to switch this to a res.render instead??
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -35,6 +36,7 @@ router.get("/:id", withAuth, async (req, res) => {
         res.status(200).json(userData); //do we need to switch this to a res.render instead??
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 })
@@ -51,6 +53,7 @@ router.post("/", async (req, res) => {
         });
         res.status(200).json(userData);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

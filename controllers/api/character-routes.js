@@ -18,6 +18,7 @@ router.get("/", withAuth, async (req, res) => {
         });
         res.status(200).json(characterData); //displays all characterData - do we need to switch this to a res.render instead??
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -66,6 +67,7 @@ router.get("/:id", withAuth, async (req, res) => {
         }
         res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -91,6 +93,7 @@ router.post("/:id", withAuth, async (req, res) => {
         // characterData.push(newPost); // think this line is uncessary because it is async - when characterData is created here, it shoudl include the newPost just added to the table above
         res.status(200).json(characterData); //do we need to switch this to a res.render instead??
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 })
