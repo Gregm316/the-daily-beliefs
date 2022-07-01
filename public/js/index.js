@@ -20,8 +20,9 @@ function routeCreator(selectedChar) {
     async (req, res) => {
         try {
             charId = await Character.findOne({
+                attributes: {id},
                 where: {
-                    id: req.params.id
+                    character_name: selectedChar //where the character name matches character anme from table
                 }
             });
             //then change the location to new URL
