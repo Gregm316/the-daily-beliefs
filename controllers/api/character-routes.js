@@ -29,7 +29,7 @@ router.get("/:id", withAuth, async (req, res) => {
     try {
         
         //try to fetch the given character's URL (maybe as an external function)....
-        const fetchChar = await marvelFetch();
+        // const fetchChar = await marvelFetch();
 
         //then continue to grab the rest of the normal process of querying data from our DB
         const characterData = await Character.findByPk(req.params.id, { // find the single character by the given id...
