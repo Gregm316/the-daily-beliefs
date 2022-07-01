@@ -11,6 +11,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
     //do we need to display any info fromt he tables (for logged in user)? I think we just want blank homepage
     //if we wanted to display, this is where we would do something like a Post.findAll(...)
+    console.log("GET route request on home page /");
     try {
         res.status(200).json({message: "Testing the home route!"});
         //render the homepage hamdlebars
@@ -18,12 +19,14 @@ router.get("/", async (req, res) => {
         //     logged_in: req.session.logged_in
         // });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 //login route
 router.get("/login", (req, res) => {
+    console.log("GET request on /login");
     //if the user is logged in, redirect to the homepage "/"...
     if (req.session.logged_in) {
         res.redirect("/");
