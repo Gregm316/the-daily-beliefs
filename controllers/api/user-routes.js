@@ -7,6 +7,7 @@ const withAuth = require("../../utils/auth");
 
 //get / display all users - endpoint: "/api/users/"
 router.get("/", withAuth, async (req, res) => {
+    console.log("GET request on /api/users");
     // try catch, use findAll for User
     try{ 
         const userData = await User.findAll ({
@@ -15,6 +16,7 @@ router.get("/", withAuth, async (req, res) => {
         });
         res.status(200).json(userData); //do we need to switch this to a res.render instead??
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -22,6 +24,7 @@ router.get("/", withAuth, async (req, res) => {
 
 //get / display a certain user
 router.get("/:id", withAuth, async (req, res) => {
+    console.log("GET request on /api/users/:id");
     try {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ["password"]},
@@ -35,9 +38,28 @@ router.get("/:id", withAuth, async (req, res) => {
         res.status(200).json(userData); //do we need to switch this to a res.render instead??
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 })
+
+//create (POST) a new user
+router.post("/", async (req, res) => {
+    console.log("POST request on /api/users");
+    try {
+        const userData = await User.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.password
+        });
+        res.status(200).json(userData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 //update a certain user
 
