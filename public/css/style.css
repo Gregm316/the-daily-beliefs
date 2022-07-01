@@ -28,3 +28,19 @@ html {
     width: 45vw;
     border: crimson solid 10px;
 }
+
+#character-image {
+    /* width: 216px;
+    height: 324px; */
+
+    width: 464px;
+    height: 261px;
+}
+
+#character-info {
+    border-bottom: solid black 1px;
+}
+
+#new-comment {
+    border-bottom: solid black 1px;
+}
