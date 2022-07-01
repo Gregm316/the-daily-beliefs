@@ -1,5 +1,6 @@
 //import router
 const router = require("express").Router();
+const path = require("path");
 //import any models needed....
 
 //import withAUth helper func
@@ -18,6 +19,8 @@ router.get("/", async (req, res) => {
         // render("homepage", { // uncomment when handlebars is implemented
         //     logged_in: req.session.logged_in
         // });
+        //display index.html when we have a GET requet to homepage / route
+        res.sendFile(path.join(__dirname, "/index.html"));
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -32,10 +35,17 @@ router.get("/login", (req, res) => {
         res.redirect("/");
         return;
     }
-    res.status(200).json({message: `testing the /login route with a ${req.method} request!` })
     //...if they are not logged in, then render the login handlebar
-    // res.render("login"); // uncomment when handlebars is implemented
-})
+    try{
+        // res.status(200).json({message: `testing the /login route with a ${req.method} request!` })
+         // res.render("login"); // uncomment when handlebars is implemented
+        res.sendFile(path.join(__dirname, "../public", "login.html"));
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+    
+});
 
 //export router
 module.exports = router;

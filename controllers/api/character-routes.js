@@ -1,5 +1,6 @@
 //imports - router, and any model necessary
 const router = require("express").Router();
+const path = require("path");
 const { Character, Post } = require("../../models");
 const marvelFetch = require("../../public/js/marvelFetch");
 const withAuth = require("../../utils/auth");
