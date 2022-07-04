@@ -37,3 +37,5 @@ function routeCreator(selectedChar) {
 
 };
 
+//export the function
+module.exports = routeCreator;
