@@ -26,7 +26,8 @@ function routeCreator(selectedChar) {
                 }
             });
             //then change the location to new URL...maybe use res.redirect instead
-            location.href = `http://localhost:3001/characters/${chardId}` //not sure if this is correct
+            // location.href = `http://localhost:3001/characters/${chardId}` //not sure if this is correct
+            res.redirect(`http://localhost:3001/characters/${chardId}`);
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
@@ -35,3 +36,4 @@ function routeCreator(selectedChar) {
 
 
 };
+
