@@ -20,9 +20,9 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  // store: new SequelizeStore({
+  //   db: sequelize
+  // })
 };
 
 app.use(session(sess));
@@ -33,6 +33,11 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+  console.log(`${req.method} requested on endpoint: ${req.path}`)
+  next();
+});
 
 app.use(routes);
 
