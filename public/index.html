@@ -25,7 +25,8 @@
             <div id="page-title">
                 <h1 class="title is-1 has-text-centered">Welcome to the Daily Beliefs!</h1>
             </div>
-            <p class="subtitle is-4 has-text-centered mt-4 mb-6">Your source to report your opinions on Marvel characters!</p>
+            <p class="subtitle is-4 has-text-centered mt-4 mb-6">Your source to report your opinions on Marvel
+                characters!</p>
 
             <div class="is-flex is-justify-content-space-around is-align-items-center is-flex-wrap-wrap">
                 <img src="./css/images/typewriter.jpg" id="typewriter" class="mb-6">
@@ -35,14 +36,14 @@
                     <!-- Drop Down Selector -->
                     <div class="select is-large mb-5">
                         <select id="character-selection">
-                          <option>Black Widow</option>
-                          <option>Captain America</option>
-                          <option>Hulk</option>
-                          <option>Iron Man</option>
-                          <option>Spiderman</option>
-                          <option>Hawkeye</option>
+                            <option>Black Widow</option>
+                            <option>Captain America</option>
+                            <option>Hulk</option>
+                            <option>Iron Man</option>
+                            <option>Spiderman</option>
+                            <option>Hawkeye</option>
                         </select>
-                      </div>
+                    </div>
                     <!-- Drop Down Selector -->
                     <button class="button is-large is-black mb-6" id="get-started">Get Reporting!</button>
                 </div>
@@ -53,8 +54,21 @@
 
         </div>
     </section>
-<!-- Added link to index.js script -->
-<script src="./js/index.js"></script>
+    <!-- CHAT start -->
+    <main class="join-main">
+        <form action="chat.html">
+            <div class="form-control">
+                <label for="username">Enter Chat Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter username..." required />
+            </div>
+            <div class="flex">
+                <button type="submit" class="btn">Join Chat</button>
+            </div>
+        </form>
+    </main>
+    <!-- END start -->
+    <!-- Added link to index.js script -->
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
