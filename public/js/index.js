@@ -1,5 +1,5 @@
 //imports
-const router = require("express").Router();
+const router = require("express").Router(); //this line is throwing an error that 'require' is undefined, how do we get around that?
 const path = require("path");
 const { Character, Post } = require("../../models");
 
@@ -15,6 +15,7 @@ getStartedBtn.addEventListener("click", routeCreator);
 
 
 function routeCreator(selectedChar) {
+    console.log("routeCreator function called"); //test
     let charId;
     //process that will retrieve the ID number based on selectedChar text
     async (req, res) => {
@@ -37,5 +38,7 @@ function routeCreator(selectedChar) {
 
 };
 
-//export the function
+console.log("***index.js linked!"); //test
+
+//export the function?
 module.exports = routeCreator;
