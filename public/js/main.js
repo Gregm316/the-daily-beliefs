@@ -80,7 +80,7 @@ function outputUsers(users) {
 document.getElementById('leave-btn').addEventListener('click', () => {
   const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
   if (leaveRoom) {
-    window.location = '../index.html'; // Select location when user leaves chat
+    window.location = '../home.html'; // Select location when user leaves chat
   } else {
   }
 });

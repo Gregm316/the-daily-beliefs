@@ -13,8 +13,6 @@ const getStartedBtn = document.querySelector("#get-started");
 getStartedBtn.addEventListener("click", saveCharacterId);
 
 
-
-
 async function saveCharacterId(selectedChar) {
     console.log("routeCreator function called"); //test
     let charId;
