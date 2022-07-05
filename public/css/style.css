@@ -54,13 +54,14 @@ html {
 
 /* ----------Chat page CSS------------------ */
 
-/* Join chat page */
 
 :root {
 	--dark-color-a: rgba(0, 0, 0, 0.94);
 	--dark-color-b: #cb3030;
 	--light-color: #e0e3f4;
 }
+
+/* Join chat page */
 
 .join-container {
 	max-width: 500px;
