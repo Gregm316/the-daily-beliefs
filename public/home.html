@@ -18,7 +18,7 @@
     </header>
     <nav class="is-flex is-justify-content-space-between">
       <a href="#join-chat"><button class="button m-4 is-black">Chat</button></a>
-      <a href="login.html"><button class="button m-4 is-black">Login</button></a>
+      <a href="login.html"><button id="login-button" class="button m-4 is-black">Login</button></a>
       <!-- <button class="button m-4 is-black">Log In</button> -->
     </nav>
 
@@ -44,7 +44,7 @@
             </h2>
             <!-- Drop Down Selector -->
             <div class="select is-large mb-5">
-              <select>
+              <select id="character-selection">
                 <option value="1">Black Widow</option>
                 <option value="2">Captain America</option>
                 <option value="3">Hulk</option>
@@ -54,11 +54,11 @@
               </select>
             </div>
             <!-- Drop Down Selector -->
-            <a href="character.html"
-              ><button class="button is-large is-black mb-6">
+            <!-- <a href="character.html"> -->
+              <button id="get-started" class="button is-large is-black mb-6">
                 Get Reporting!
-              </button></a
-            >
+              </button>
+            <!-- </a> -->
             <!-- Get Reporting!
             </button> -->
           </div>
@@ -83,5 +83,6 @@
         </div>
       </form>
     </main>
+    <script src="./js/home.js"></script>
   </body>
 </html>

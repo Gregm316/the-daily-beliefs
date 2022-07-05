@@ -70,8 +70,8 @@ router.post("/signup", async (req, res) => {
 });
 
 //sign in
-router.post('/signin', async (req, res) => {
-    console.log("POST /api/users/signin");
+router.post('/login', async (req, res) => {
+    console.log("POST /api/users/login");
     try {
         const dbUserData = await User.findOne({
             where: {

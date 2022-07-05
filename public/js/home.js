@@ -1,6 +1,7 @@
 //imports
 
-
+//code here to check if user logged in, if so change log in button to log out
+const logInOutButton = document.querySelector("#login-button");
 
 //purpose of this file is to try to redirect the user to the appropriate character page, based on their selection from the drop down...
 
@@ -39,5 +40,5 @@ async function saveCharacterId(selectedChar) {
 
 };
 
-console.log("***index.js linked!"); //test
+console.log("***home.js linked!"); //test
 
