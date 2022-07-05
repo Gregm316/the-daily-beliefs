@@ -1,77 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Daily Beliefs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="bg-image">
-        <h1 class="title is-size-1 ml-6 pt-6">The Daily Beliefs</h1>
+      <h1 class="title is-size-1 ml-6 pt-6">The Daily Beliefs</h1>
     </header>
     <nav class="is-flex is-justify-content-space-between">
-        <button class="button m-4 is-black">Chat</button>
-        <button class="button m-4 is-black">Log In</button>
+      <a href="#join-chat"><button class="button m-4 is-black">Chat</button></a>
+      <a href="login.html"><button class="button m-4 is-black">Login</button></a>
+      <!-- <button class="button m-4 is-black">Log In</button> -->
     </nav>
 
     <section class="section">
-        <div class="container is-fluid">
-            <div id="page-title">
-                <h1 class="title is-1 has-text-centered">Welcome to the Daily Beliefs!</h1>
-            </div>
-            <p class="subtitle is-4 has-text-centered mt-4 mb-6">Your source to report your opinions on Marvel characters!</p>
-
-            <div class="is-flex is-justify-content-space-around is-align-items-center is-flex-wrap-wrap">
-                <img src="./css/images/typewriter.jpg" id="typewriter" class="mb-6">
-
-                <div class="has-text-centered">
-                    <h2 class="is-size-3 m-5">Select a character and then click the button below to get started!</h2>
-                    <!-- Drop Down Selector -->
-                    <div class="select is-large mb-5">
-                        <select>
-                          <option>Black Widow</option>
-                          <option>Captain America</option>
-                          <option>Hulk</option>
-                          <option>Iron Man</option>
-                          <option>Spiderman</option>
-                          <option>Hawkeye</option>
-                        </select>
-                      </div>
-                    <!-- Drop Down Selector -->
-                    <button class="button is-large is-black mb-6">Get Reporting!</button>
-                </div>
-
-            </div>
-
-
-
+      <div class="container is-fluid">
+        <div id="page-title">
+          <h1 class="title is-1 has-text-centered">
+            Welcome to the Daily Beliefs!
+          </h1>
         </div>
+        <p class="subtitle is-4 has-text-centered mt-4 mb-6">
+          Your source to report your opinions on Marvel characters!
+        </p>
+
+        <div
+          class="is-flex is-justify-content-space-around is-align-items-center is-flex-wrap-wrap"
+        >
+          <img src="./css/images/typewriter.jpg" id="typewriter" class="mb-6" />
+
+          <div class="has-text-centered">
+            <h2 class="is-size-3 m-5">
+              Select a character and then click the button below to get started!
+            </h2>
+            <!-- Drop Down Selector -->
+            <div class="select is-large mb-5">
+              <select>
+                <option>Black Widow</option>
+                <option>Captain America</option>
+                <option>Hulk</option>
+                <option>Iron Man</option>
+                <option>Spiderman</option>
+                <option>Hawkeye</option>
+              </select>
+            </div>
+            <!-- Drop Down Selector -->
+            <a href="character.html"
+              ><button class="button is-large is-black mb-6">
+                Get Reporting!
+              </button></a
+            >
+            <!-- Get Reporting!
+            </button> -->
+          </div>
+        </div>
+      </div>
     </section>
 
-    <main class="join-main">
-        <form action="chat.html">
-          <div class="form-control">
-            <label for="username">Enter Chat Username</label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter username..."
-              required
-            />
-          </div>
-          <div class="flex">
-            <button type="submit" class="btn">Join Chat</button>
-          </div>
-        </form>
-      </main>
-
-</body>
-
+    <main class="join-main" id="join-chat">
+      <form action="chat.html">
+        <div class="form-control">
+          <label for="username">Enter Chat Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter username..."
+            required
+          />
+        </div>
+        <div class="flex">
+          <button type="submit" class="btn">Join Chat</button>
+        </div>
+      </form>
+    </main>
+  </body>
 </html>

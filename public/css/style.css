@@ -52,13 +52,12 @@ html {
 
 
 
-
 /* ----------Chat page CSS------------------ */
 
 /* Join chat page */
 
 :root {
-	--dark-color-a: rgb(22, 22, 100);
+	--dark-color-a: rgba(0, 0, 0, 0.94);
 	--dark-color-b: #cb3030;
 	--light-color: #e0e3f4;
 }
@@ -79,7 +78,7 @@ html {
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	background: var(--dark-color-a);
     border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
@@ -91,8 +90,12 @@ html {
 
 .join-main label {
 	display: block;
+	color: #fff;
 	font-size: large;
 	margin-bottom: 5px;
+}
+.form-control {
+	align-items: center;
 }
 
 .btn {

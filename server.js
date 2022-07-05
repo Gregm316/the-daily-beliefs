@@ -11,6 +11,8 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
@@ -48,8 +50,8 @@ const {
   getIndividualRoomUsers
 } = require('./helpers/userHelper');
 
-const server = http.createServer(app);
-const io = socketio(server);
+// const server = http.createServer(app);
+// const io = socketio(server);
 
 // this block will run when the client connects
 io.on('connection', socket => {
@@ -101,9 +103,12 @@ io.on('connection', socket => {
     }
   });
 });
+// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // ----------------End of chat code------------------------
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  server.listen(PORT, () => console.log('Now listening'));   //Changed app.listen to server.listen. Needs to see if it works!
 });
+
+
