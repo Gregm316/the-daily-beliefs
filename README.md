@@ -34,11 +34,11 @@ When a user visits the site and they have loaded the landing page, they will hav
 
 ### **Screenshots of The Daily Beliefs:**
 
-![Home Page](./public/images/home-page.png)
+![Home Page](./public/css/images/home-page.png)
 
-![Character Page](./public/images/character-page.png)
+![Character Page](./public/css/images/character-page.png)
 
-![Chat Page](./public/images/chat-page.png)
+![Chat Page](./public/css/images/chat-page.png)
 
 ## [Contributing](#table-of-contents)
 This application was created by Jack Doran, Gregory Maher, Alyssa Lopez and David Heredia.
