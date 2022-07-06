@@ -27,7 +27,7 @@ const fetch = require("../../public/js/marvelFetch");
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
 router.get("/", withAuth, async (req, res) => {
     console.log("GET /api/characters/");
-    req.session.characterId = req.body.characterId; //used to be req.params.id, think it should be req.body.characterId. Not 100%
+    req.session.characterId = req.params.id; //originally req.params.id, think it should be req.body.characterId. Not 100%
     try {
         console.log("Character ID: ", req.session.characterId);
         const dbCharacter = await Character.findOne({
