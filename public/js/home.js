@@ -33,6 +33,7 @@ async function saveCharacterId(selectedChar) {
             // const characterData = await response.json()
             // console.log(characterData);
             location.replace("/characters");
+            // location.replace("/character-spiderman.html");
         }
     } catch (err) {
         console.log(err);
