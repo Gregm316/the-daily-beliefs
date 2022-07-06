@@ -27,7 +27,7 @@ const fetch = require("../../public/js/marvelFetch");
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
 router.get("/", withAuth, async (req, res) => {
     console.log("GET /api/characters/");
-    req.session.characterId = req.params.id; //originally req.params.id, think it should be req.body.characterId. Not 100%
+    req.session.characterId = req.params.id; 
     try {
         console.log("Character ID: ", req.session.characterId);
         const dbCharacter = await Character.findOne({
@@ -36,7 +36,7 @@ router.get("/", withAuth, async (req, res) => {
                 id: req.session.characterId //where the character id matches character id from table
             }
         });
-        res.status(200).json(dbCharacter); //do we want to use res.sendFile instead here? to send the HTML file that matches the characterId value??
+        res.status(200).json(dbCharacter); 
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
