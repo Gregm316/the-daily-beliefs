@@ -33,7 +33,7 @@ router.get("/", withAuth, async (req, res) => {
         const dbCharacter = await Character.findOne({
             include: [{ model: Post }],
             where: {
-                id: req.session.characterId //where the character name matches character name from table
+                id: req.session.characterId //where the character id matches character id from table
             }
         });
         res.status(200).json(dbCharacter);

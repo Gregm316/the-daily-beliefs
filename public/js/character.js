@@ -8,5 +8,6 @@ fetch("/api/characters/")
 })
 .then((data) => {
     console.log("Data: ", data);
-    
+    //do we need command here to redirect to the appropriate caracter page, based on the value of req.session.characterId
+    // location.replace(`/api/characters/${req.session.characterId}`);
 })
