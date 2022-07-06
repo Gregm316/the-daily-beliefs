@@ -8,7 +8,9 @@ fetch("/api/characters/")
 })
 .then((data) => {
     console.log("Data: ", data);
+
 });
+
 
 const oldComments = document.getElementById('old-comments');
 const commentText = document.querySelector('.textarea');
@@ -32,7 +34,9 @@ function newComment() {
     
     
     const p = document.createElement('p');
+
     p.innerHTML = '<strong>' + 'USERNAME' + '</strong>' + 
     '<br>' + commentText.value;
     div2.appendChild(p);
 }
+

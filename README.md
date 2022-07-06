@@ -32,7 +32,10 @@ This application utilizes the following technology:
 When a user visits the site and they have loaded the landing page, they will have the ability to select a Marvel character from a drop down menu and visit that character's page. They will, however, first be required to sign-up or login before proceeding. Once a user logs in, they will be able to post comments on the character's page that they have selected. From any page on the application, the user will also be given the ability to click the chat button, which will direct them to select a username for the chatroom and will then direct them to the live chat feature. They will be able to live chat with other Marvel fans about everything Marvel related.   
 
 ### **Click on the following link to view the deployed application:** 
+
+
 https://the-daily-beliefs-jcd.herokuapp.com/
+
 
 ### **Screenshots of The Daily Beliefs:**
 
@@ -40,7 +43,10 @@ https://the-daily-beliefs-jcd.herokuapp.com/
 ![Home Page](./public/css/images/home-page.png)
 
 ### Character Post Page
+
+
 ![Spiderman Page](./public/css/images/spiderman-page-1.png)
+
 
 ### Chat Room
 ![Chat Page](./public/css/images/chat-page.png)
@@ -67,4 +73,7 @@ Alyssa:
 
 David:
 [Email: davidgheredia01@gmail.com](mailto:davidgheredia01@gmail.com) | [GitHub](https://github.com/HerediaDavid)
+
+
+
 
