@@ -10,6 +10,8 @@ let dropdown = document.querySelector("#character-selection");
 
 const getStartedBtn = document.querySelector("#get-started");
 
+const link = document.getElementById('link');
+
 
 getStartedBtn.addEventListener("click", saveCharacterId);
 
@@ -43,3 +45,10 @@ async function saveCharacterId() {
 };
 
 console.log("***home.js linked!"); //test
+
+// getStartedBtn.addEventListener("click", redirectCharacterPage);
+
+// function redirectCharacterPage() {
+//     var url = "/characters" + "/" + dropdown.value;
+//     link.href = url;
+// }

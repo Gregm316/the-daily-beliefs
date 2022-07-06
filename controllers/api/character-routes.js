@@ -25,18 +25,17 @@ const fetch = require("../../public/js/marvelFetch");
 // });
 
 //duplicate the above get route - use Character.findByPk, and includ: [{ model: Post}] where: character_id = character.id
-router.get("/", withAuth, async (req, res) => {
-    console.log("GET /api/characters/");
-    req.session.characterId = req.params.id;
+router.get("/:id", withAuth, async (req, res) => {
+    console.log("GET /api/characters/:id");
+    // req.session.characterId = req.params.id;
     try {
-        console.log("Character ID: ", req.session.characterId);
-        const dbCharacter = await Character.findOne({
+        // console.log("Character ID: ", req.session.characterId);
+        const dbCharacter = await Character.findByPk({
             include: [{ model: Post }],
-            where: {
-                id: req.session.characterId //where the character name matches character name from table
-            }
+
         });
         res.status(200).json(dbCharacter);
+        res.sendFile(path.join(__dirname, "../public/character.html"));
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

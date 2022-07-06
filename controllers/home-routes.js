@@ -51,7 +51,7 @@ router.get("/login", (req, res) => {
 
 router.get("/characters", withAuth, (req, res) => {
     console.log("GET /characters");
-    res.sendFile(path.join(__dirname, "../public/character.html"));
+    res.sendFile(path.join(__dirname, "../public/character.html")); //test: updated to hard code spiderman html for demo
 });
 
 //export router
