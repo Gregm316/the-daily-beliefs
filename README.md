@@ -25,6 +25,7 @@ This application utilizes the following technology:
 - Moment
 - Socket.io
 - Bulma.io
+- Marvel API
 
 ## [Usage](#table-of-contents)
 
