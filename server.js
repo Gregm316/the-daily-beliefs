@@ -3,41 +3,40 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers'); // no helper functions yet - uncommetn if we create them
+const helpers = require('./utils/helpers');
 const socketio = require("socket.io");
-const http = require("http");
+const http = require('http');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers }); // no helpers yet - uncomment if we create helper function file
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Secret',
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize
-  // })
+  store: new SequelizeStore({
+    db: sequelize
+  })
 };
 
 app.use(session(sess));
 
+// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use((req, res, next) => {
-  console.log(`${req.method} requested on endpoint: ${req.path}`)
-  next();
-});
 
 app.use(routes);
 
@@ -49,10 +48,10 @@ const {
   exitRoom,
   newUser,
   getIndividualRoomUsers
-} = require('./helpers/userHelper.js');
+} = require('./helpers/userHelper');
 
-const server = http.createServer(app);
-const io = socketio(server);
+// const server = http.createServer(app);
+// const io = socketio(server);
 
 // this block will run when the client connects
 io.on('connection', socket => {
@@ -104,9 +103,11 @@ io.on('connection', socket => {
     }
   });
 });
+// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // ----------------End of chat code------------------------
 
 sequelize.sync({ force: false }).then(() => {
-  server.listen(PORT, () => console.log('Now listening'));
+  server.listen(PORT, () => console.log('Now listening')); 
 });
+
