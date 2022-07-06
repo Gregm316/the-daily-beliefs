@@ -36,7 +36,7 @@ When a user visits the site and they have loaded the landing page, they will hav
 
 ![Home Page](./public/css/images/home-page.png)
 
-![Character Page](./public/css/images/character-page.png)
+![Spiderman Page](./public/css/images/spiderman-page.png)
 
 ![Chat Page](./public/css/images/chat-page.png)
 
