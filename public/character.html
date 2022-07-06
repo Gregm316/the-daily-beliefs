@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Beliefs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header class="bg-image">
+        <h1 class="title is-size-1 ml-6 pt-6">The Daily Beliefs</h1>
+    </header>
+    <nav class="is-flex is-justify-content-space-between">
+        <a href="home.html#join-chat"><button class="button m-4 is-black">Chat</button></a>
+        <a href="home.html"><button class="button m-4 is-black">Log Out</button></a>
+    </nav>
+
+    <section class="section">
+        <div class="container is-fluid">
+            <div id="page-title">
+                <!-- Character Name -->
+                <h1 class="title is-1 has-text-centered" id="character-name">Hulk</h1>
+            </div>
+
+            <!-- Character Information -->
+            <div class="columns is-desktop is-align-items-center has-text-centered mt-6 mb-6" id="character-info">
+                <!-- Character Image -->
+                <div class="column is-one-third-fullhd">
+                    <img src="./css/images/typewriter.jpg" id="character-image" class="mb-6">
+                </div>
+
+
+                <div class="has-text-left-desktop column" id="character-text">
+                    <h2 class="title is-size-3">Description:</h2>
+                    <!-- Character Description -->
+                    <p class="mb-6 is-size-4" id="character-description">Caught in a gamma bomb explosion while trying
+                        to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful
+                        creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the
+                        stronger the Hulk gets.</button>
+                </div>
+            </div>
+
+
+            <!-- Write a Comment -->
+            <div id="new-comment" class="pb-6">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="field">
+                            <p class="control">
+                                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <a class="button is-black">Submit</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Posted Comments -->
+            <div id="old-comments" class="mt-5 pb-6">
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>John Smith</strong>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                                pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
+                                feugiat facilisis.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>John Smith</strong>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                                pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
+                                feugiat facilisis.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>John Smith</strong>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                                pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
+                                feugiat facilisis.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+    <script src="./js/character.js"></script>
+</body>
+
+</html>
