@@ -41,5 +41,6 @@ async function saveCharacterId(selectedChar) {
 
 };
 
+
 console.log("***home.js linked!"); //test
 

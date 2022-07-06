@@ -28,6 +28,7 @@ const fetch = require("../../public/js/marvelFetch");
 router.get("/", withAuth, async (req, res) => {
     console.log("GET /api/characters/");
     req.session.characterId = req.params.id; 
+
     try {
         console.log("Character ID: ", req.session.characterId);
         const dbCharacter = await Character.findOne({
@@ -37,6 +38,7 @@ router.get("/", withAuth, async (req, res) => {
             }
         });
         res.status(200).json(dbCharacter); 
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

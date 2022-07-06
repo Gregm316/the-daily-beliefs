@@ -33,13 +33,20 @@ When a user visits the site and they have loaded the landing page, they will hav
 
 ### **Click on the following link to view the deployed application:** 
 
+
+https://the-daily-beliefs-jcd.herokuapp.com/
+
+
 ### **Screenshots of The Daily Beliefs:**
 
 ### Home Page
 ![Home Page](./public/css/images/home-page.png)
 
 ### Character Post Page
-![Spiderman Page](./public/css/images/spiderman-page.png)
+
+
+![Spiderman Page](./public/css/images/spiderman-page-1.png)
+
 
 ### Chat Room
 ![Chat Page](./public/css/images/chat-page.png)
@@ -66,3 +73,7 @@ Alyssa:
 
 David:
 [Email: davidgheredia01@gmail.com](mailto:davidgheredia01@gmail.com) | [GitHub](https://github.com/HerediaDavid)
+
+
+
+

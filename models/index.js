@@ -1,3 +1,4 @@
+
 //first, import all other models
 const User = require("./User");
 const Character = require("./Character");
