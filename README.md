@@ -35,10 +35,13 @@ When a user visits the site and they have loaded the landing page, they will hav
 
 ### **Screenshots of The Daily Beliefs:**
 
+### Home Page
 ![Home Page](./public/css/images/home-page.png)
 
+### Character Post Page
 ![Spiderman Page](./public/css/images/spiderman-page.png)
 
+### Chat Room
 ![Chat Page](./public/css/images/chat-page.png)
 
 ## [Contributing](#table-of-contents)
