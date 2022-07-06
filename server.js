@@ -108,7 +108,7 @@ io.on('connection', socket => {
 // ----------------End of chat code------------------------
 
 sequelize.sync({ force: false }).then(() => {
-  server.listen(PORT, () => console.log('Now listening'));   //Changed app.listen to server.listen. Needs to see if it works!
+  server.listen(PORT, () => console.log('Now listening')); 
 });
 
 
