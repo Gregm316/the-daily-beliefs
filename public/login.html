@@ -16,7 +16,7 @@
         <h1 class="title is-size-1 ml-6 pt-6">The Daily Beliefs</h1>
     </header>
     <nav class="is-flex is-justify-content-space-between">
-        <button class="button m-4 is-black">Chat</button>
+        <a href="home.html#join-chat"><button class="button m-4 is-black">Chat</button></a>
         <button class="button m-4 is-black">Log</button>
     </nav>
 
@@ -29,22 +29,22 @@
             <p class="subtitle is-3 has-text-centered mt-4 mb-6">Log In!</p>
             <!-- FORM -->
             <form>
-                <div class="container pb-6">
+                <div id="login-form" class="container pb-6">
                     <div class="field">
                         <label class="label">Email</label>
                         <p class="control">
-                            <input class="input" type="email" placeholder="Email">
+                            <input id="login-email" class="input" type="email" placeholder="Email">
                         </p>
                     </div>
                     <div class="field">
                         <label class="label">Passsword</label>
                         <p class="control">
-                            <input class="input" type="password" placeholder="Password">
+                            <input id="login-password" class="input" type="password" placeholder="Password">
                         </p>
                     </div>
                     <div class="field">
                         <p class="control">
-                            <button class="button is-black">
+                            <button type="submit" class="button is-black">
                                 Login
                             </button>
                         </p>
@@ -52,11 +52,11 @@
                 </div>
             </form>
             
-            <p class="pb-6">Not a Daily Belief's reporter? No problem! Sign up <a href="url">here!</a></p>
+            <p class="pb-6">Not a Daily Belief's reporter? No problem! Sign up <a href="sign-up.html">here!</a></p>
 
         </div>
     </section>
-
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

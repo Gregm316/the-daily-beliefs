@@ -1,25 +1,21 @@
 [
     {
-        "first_name": "Jack",
-        "last_name": "Doran",
+        "username": "JackJack1",
         "email": "jack@email.com",
         "password": "password"
     },
     {
-        "first_name": "Alyssa",
-        "last_name": "Lopez",
+        "username": "ironchild02",
         "email": "alyssa@email.com",
         "password": "password"
     },
     {
-        "first_name": "David",
-        "last_name": "Heredia",
+        "username": "batman3",
         "email": "david@email.com",
         "password": "password"
     },
     {
-        "first_name": "Greg",
-        "last_name": "Maher",
+        "username": "superDad",
         "email": "greg@email.com",
         "password": "password"
     }
